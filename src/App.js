@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import { Router } from "react-router";
+const createHashHistory = require("history/lib/createHashHistory");
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import routes from "./routes";
+import configureStore from "./store/configureStore";
+import "./bootswatch.less";
+import "./styles.css";
 
-export default App;
+const store = configureStore({
+  notifications: [],
+});
+const history = createHashHistory({queryKey: false});
+
+render((
+  <Provider store={store}>
+    <Router history={history}>
+      {routes}
+    </Router>
+  </Provider>
+), document.getElementById("app"));
