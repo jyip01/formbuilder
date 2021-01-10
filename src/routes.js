@@ -74,31 +74,32 @@ const BackAndCheck = (props) => {
 };*/
 
 export default (
-    <Route exact path="/" component={App, {mainComponent: FormContainer}}>
+    <Route exact path="/" render ={props => <App mainComponent = {<FormContainer/>} {...props}/>}/>
+        
+    // <Route exact path="/" component={App, {mainComponent: FormContainer}}/>
+  
+      // {/*
+      // <IndexRoute components={{ mainComponent: FormContainer}} />
+      // <Route path="faq"
+      //   components={{...common, sidebarComponent: LinkToBuilder, content: FAQ}} />
+      // <Route path="builder/json"
+      //   components={{...common, sidebarComponent: BackAndDownloadJSONSchema, content: JsonViewContainer}} />
+      // <Route path="builder/edit/:adminId"
+      //   components={{...common, content: FormEditContainer}} />
+      // <Route path="builder"
+      //   components={{...common, content: FormContainer}} />
+      // <Route path="builder/published/:adminToken"
+      //   components={{...common, sidebarComponent: BackAndCheck, content: FormCreatedContainer}} />
+      // <Route path="form/:id"
+      //   components={{...common, mainComponent: UserFormContainer}} />
+      // <Route path="form/data-sent"
+      //   components={{...common, sidebarComponent: Check, content: RecordCreatedContainer}} />
+      // <Route path="admin/:adminToken"
+      //   components={{...common, sidebarComponent: null, header: null, content: AdminViewContainer}} />
+      // <Route path="*" components={{
+      //   sidebarComponent: LinkToHome,
+      //   content: _ => <h1>Page not found.</h1>
+      // }}/>*/}
       
   
-      {/*
-      <IndexRoute components={{ mainComponent: FormContainer}} />
-      <Route path="faq"
-        components={{...common, sidebarComponent: LinkToBuilder, content: FAQ}} />
-      <Route path="builder/json"
-        components={{...common, sidebarComponent: BackAndDownloadJSONSchema, content: JsonViewContainer}} />
-      <Route path="builder/edit/:adminId"
-        components={{...common, content: FormEditContainer}} />
-      <Route path="builder"
-        components={{...common, content: FormContainer}} />
-      <Route path="builder/published/:adminToken"
-        components={{...common, sidebarComponent: BackAndCheck, content: FormCreatedContainer}} />
-      <Route path="form/:id"
-        components={{...common, mainComponent: UserFormContainer}} />
-      <Route path="form/data-sent"
-        components={{...common, sidebarComponent: Check, content: RecordCreatedContainer}} />
-      <Route path="admin/:adminToken"
-        components={{...common, sidebarComponent: null, header: null, content: AdminViewContainer}} />
-      <Route path="*" components={{
-        sidebarComponent: LinkToHome,
-        content: _ => <h1>Page not found.</h1>
-      }}/>*/}
-      
-    </Route>
 );

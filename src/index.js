@@ -1,11 +1,12 @@
 import React from "react";
-import { render } from "react-dom";
+import  ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-// import { Router, useRouterHistory } from "react-router";
-// import routes from "./routes";
+import  {BrowserRouter} from "react-router-dom";
+import routes from "./routes";
 import configureStore from "./store/configureStore";
 import "./bootswatch.less";
 import "./styles.css";
+import App from './App.js';
 //import appHistory from "./app_history";
 //import { createHashHistory } from "history";
 
@@ -22,10 +23,10 @@ const store = configureStore({
 });
 //const history = CreateHashHistory({queryKey: false});
 
-render((
-  <Provider store={store}>
-    <Router history={appHistory}>
-      {routes}
-    </Router>
-  </Provider>
-), document.getElementById("app"));
+ReactDOM.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
+, document.getElementById("root"));
