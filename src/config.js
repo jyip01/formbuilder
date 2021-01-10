@@ -1,3 +1,6 @@
+//import configureStore from "./store/configureStore"
+
+//not sure what i can take out
 export default {
     projectName: process.env.PROJECT_NAME || "Formbuilder",
     server: {

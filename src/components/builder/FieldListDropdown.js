@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import {Dropdown, MenuItem}  from "react-bootstrap";
+import {Dropdown}  from "react-bootstrap";
 
 import config from "../../config";
 
@@ -46,12 +46,12 @@ export default class FieldListDropdown extends Component {
 
         <Dropdown.Menu>
           {this.state.fieldList.map((field, index) => {
-            return <MenuItem key={index}
+            return <Dropdown.Item key={index}
                 eventKey={index}
                 onSelect={this.handleFieldListAction.bind(this)}
                 ><i className={`glyphicon glyphicon-${field.icon}`} />
                 {field.label}
-              </MenuItem>;
+              </Dropdown.Item>;
           })}
         </Dropdown.Menu>
       </Dropdown>

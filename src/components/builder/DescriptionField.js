@@ -1,5 +1,6 @@
-import React, {PropTypes} from "react";
+import React from "react";
 import {RIEInput} from "riek";
+import {PropTypes} from "prop-types";
 
 function DescriptionField(props) {
   const onUpdate = function(formData) {

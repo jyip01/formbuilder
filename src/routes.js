@@ -1,27 +1,27 @@
 import React from "react";
-import { Route, IndexRoute, Link } from "react-router";
+import { Route, Link } from "react-router-dom";
 
 import App from "./containers/App";
 import FormContainer from "./containers/builder/FormContainer";
-import JsonViewContainer from "./containers/builder/JsonViewContainer";
+//import JsonViewContainer from "./containers/builder/JsonViewContainer";
 
-import NotificationContainer from "./containers/NotificationContainer";
-import FormCreatedContainer from "./containers/FormCreatedContainer";
-import FormEditContainer from "./containers/builder/FormEditContainer";
-import UserFormContainer from "./containers/UserFormContainer";
-import RecordCreatedContainer from "./containers/RecordCreatedContainer";
-import AdminViewContainer from "./containers/AdminViewContainer";
-import WelcomeContainer from "./containers/WelcomeContainer";
-import JsonSchemaDownloaderContainer from "./containers/builder/JsonSchemaDownloaderContainer";
-import Header from "./components/Header";
+//import NotificationContainer from "./containers/NotificationContainer";
+//import FormCreatedContainer from "./containers/FormCreatedContainer";
+//import FormEditContainer from "./containers/builder/FormEditContainer";
+//import UserFormContainer from "./containers/UserFormContainer";
+//import RecordCreatedContainer from "./containers/RecordCreatedContainer";
+//import AdminViewContainer from "./containers/AdminViewContainer";
+//import WelcomeContainer from "./containers/WelcomeContainer";
+//import JsonSchemaDownloaderContainer from "./containers/builder/JsonSchemaDownloaderContainer";
+//import Header from "./components/Header";
 import Check from "./components/Check";
-import FAQ from "./components/FAQ";
+//import FAQ from "./components/FAQ";
 
 
-const common = {
+/*const common = {
   notifications: NotificationContainer,
   header: Header
-};
+};*/
 
 const LinkToBuilder = (props) => {
   const {children} = props;
@@ -51,7 +51,7 @@ const BackAndCheck = (props) => {
   );
 };
 
-const BackAndDownloadJSONSchema = (props) => {
+/*const BackAndDownloadJSONSchema = (props) => {
   return (
     <div>
       <LinkToBuilder text="Continue editing" {...props}/>
@@ -60,9 +60,9 @@ const BackAndDownloadJSONSchema = (props) => {
       </div>
     </div>
   );
-};
+};*/
 
-const LinkToHome = () => {
+/*const LinkToHome = () => {
   return (
     <div>
       <Link className="list-group-item" to="/">
@@ -71,31 +71,34 @@ const LinkToHome = () => {
       </Link>
     </div>
   );
-};
+};*/
 
 export default (
-  <Route path="/" >
-  <IndexRoute components={{...common, mainComponent: FormContainer}} />
-<Route path="builder/edit/:adminId"
-  components={{...common, content: FormEditContainer}} />
-<Route path="builder/json"
-  components={{...common, sidebarComponent: BackAndDownloadJSONSchema, content: JsonViewContainer}} />
-    {/*<Route path="/" component={App}>
-        components={{...common, mainComponent: WelcomeContainer}} 
+    <Route exact path="/" component={App, {mainComponent: FormContainer}}>
+      
+  
+      {/*
+      <IndexRoute components={{ mainComponent: FormContainer}} />
       <Route path="faq"
-components={{...common, sidebarComponent: LinkToBuilder, content: FAQ}} />*/}
-     
-      {/*<Route path="builder/published/:adminToken"
+        components={{...common, sidebarComponent: LinkToBuilder, content: FAQ}} />
+      <Route path="builder/json"
+        components={{...common, sidebarComponent: BackAndDownloadJSONSchema, content: JsonViewContainer}} />
+      <Route path="builder/edit/:adminId"
+        components={{...common, content: FormEditContainer}} />
+      <Route path="builder"
+        components={{...common, content: FormContainer}} />
+      <Route path="builder/published/:adminToken"
         components={{...common, sidebarComponent: BackAndCheck, content: FormCreatedContainer}} />
-      <Route path="form/data-sent"
-        components={{...common, sidebarComponent: Check, content: RecordCreatedContainer}} />
       <Route path="form/:id"
         components={{...common, mainComponent: UserFormContainer}} />
+      <Route path="form/data-sent"
+        components={{...common, sidebarComponent: Check, content: RecordCreatedContainer}} />
       <Route path="admin/:adminToken"
         components={{...common, sidebarComponent: null, header: null, content: AdminViewContainer}} />
       <Route path="*" components={{
         sidebarComponent: LinkToHome,
         content: _ => <h1>Page not found.</h1>
       }}/>*/}
+      
     </Route>
-  );
+);

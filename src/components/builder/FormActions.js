@@ -10,7 +10,7 @@ export default function FormActions(props) {
   };
 
   let saveIconName;
-  if (props.status == "pending") {
+  if (props.status === "pending") {
     saveIconName = "refresh spin";
   } else {
     saveIconName = "save";
@@ -25,13 +25,13 @@ export default function FormActions(props) {
         </FieldListDropdown>
       </ButtonToolbar>
       <ButtonGroup className="pull-right">
-        <Button onClick={() => confirm("This action will reset all unsaved changes, Are you sure?") && props.resetForm()}>
+        <Button onClick={() => window.confirm("This action will reset all unsaved changes, Are you sure?") && props.resetForm()}>
           <i className="glyphicon glyphicon-remove" />
           Reset <span className="hidden-xs">form</span>
         </Button>
         <Button bsStyle="success" onClick={onClick}>
           <i className={`glyphicon glyphicon-${saveIconName}`} />
-          Save your form
+          Preview
         </Button>
       </ButtonGroup>
     </div>
